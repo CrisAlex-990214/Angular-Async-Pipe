@@ -1,0 +1,6 @@
+<div *ngIf="(result$ | async) as result">
+  <h3 *ngIf="result.isSuccess; else errorTemplate"> {{ result.value | json }}</h3>
+  <ng-template #errorTemplate>
+    {{ result.messages | json }}
+  </ng-template>
+</div>
